@@ -1,4 +1,4 @@
-package com.johnlewis
+package com.johnlewis.products.api
 
 import com.google.gson.Gson
 import com.google.gson.JsonObject
@@ -19,11 +19,11 @@ import kotlin.math.roundToInt
 
 class ProductsApi {
     companion object {
-        val client = HttpClient(Apache) {
+        /*val client = HttpClient(Apache) {
             install(JsonFeature) {
                 serializer = GsonSerializer()
             }
-        }
+        }*/
         var categoryId: String? = null
         var labelType: String? = null
 
@@ -35,51 +35,55 @@ class ProductsApi {
             }
             var productsJson: JsonObject? = null
             runBlocking {
-
                 productsJson = client.get<JsonObject?> {
-                    url(URL("https://jl-nonprod-syst.apigee.net/v1/categories/${categoryId}/products?key=2ALHCAAs6ikGRBoy6eTHA58RaG097Fma"))
+                    url(URL("https://jl-nonprod-syst.apigee.net/v1/categories/$categoryId/products?key=2ALHCAAs6ikGRBoy6eTHA58RaG097Fma"))
                     contentType(ContentType.Application.Json)
                 }
-                //println(GsonBuilder().setPrettyPrinting().create().toJson(message))
                 println(productsJson)
-
             }
             return productsJson
         }
 
-        fun getPriceReductionProducts(): String {
-            val productsObj = Gson().fromJson(getProductsJson(), Products::class.java)
-            val productsWithWasNowPrice = productsObj.prods.filter { !it.price.wasPrice.isNullOrEmpty() }
+        fun getProductsWithPriceReduction(): String {
+            val productsJson: JsonObject? = getProductsJson()
+            val respJson = getPriceReductionProducts(productsJson)
+            return respJson
+        }
+
+        fun getPriceReductionProducts(inputJson: JsonObject?): String {
+            val productsObj = Gson().fromJson(inputJson, Products::class.java)
+            val productsWithWasNowPrice = productsObj.prods.filter { !(it.price.wasPrice.isNullOrEmpty()) }
             for (prod in productsWithWasNowPrice) {
                 if (prod.price.nowPrice is LinkedTreeMap<*, *>) {
                     prod.price.currentPrice = prod.price.nowPrice.get("to").toString()
                 } else if (prod.price.nowPrice is String) {
                     prod.price.currentPrice = prod.price.nowPrice
                 }
-                if(!prod.price.currentPrice.isNullOrEmpty())
-                prod.price.priceDiff = prod.price.wasPrice!!.toDouble() - prod.price.currentPrice!!.toDouble()
+                if (!prod.price.currentPrice.isNullOrEmpty())
+                    prod.price.priceDiff = prod.price.wasPrice!!.toDouble() - prod.price.currentPrice.toDouble()
             }
             productsWithWasNowPrice.filter {
                 it.price.priceDiff > 0
             }
 
-            val priceReducedProductsList: List<ProductWithReduction> = productsWithWasNowPrice.sortedWith(compareBy({it.price.priceDiff})).asReversed().map { it ->
-                ProductWithReduction(
-                    it.productId,
-                    it.title,
-                    getColorSwatches(it.colorSwatches),
-                    it.price.currentPrice,
-                    getpriceLabel(it.price)
-                )
-            }
+            val priceReducedProductsList: List<ProductWithReduction> =
+                productsWithWasNowPrice.sortedWith(compareBy({ it.price.priceDiff })).asReversed().map { it ->
+                    ProductWithReduction(
+                        it.productId,
+                        it.title,
+                        getColorSwatches(it.colorSwatches),
+                        it.price.currentPrice,
+                        getpriceLabel(it.price)
+                    )
+                }
             //for (i in productsWithWasNowPrice)
             //   println(i.productId)
 
             return Gson().toJson(priceReducedProductsList)
             // println("rgb value for black " + Integer.toHexString(Color.BLACK.rgb))
 
-           // for (i in productsWithWasNowPrice)
-               // println(i.productId)
+            // for (i in productsWithWasNowPrice)
+            // println(i.productId)
             //val prodItems=products.prods.get(1).productId
             //println("check" + productsObj.prods.get(1).productId)
             //var products: JsonArray =productsJson.parseJson("products").jsonArray
@@ -115,7 +119,6 @@ class ProductsApi {
             //return ""
         }
 
-        enum class BasicColours {}
 
         private fun getpriceLabel(price: ProdPrice): String {
 
@@ -130,14 +133,13 @@ class ProductsApi {
                 }
                 "ShowPercDscount" -> {
                     val percentDisc =
-                        ((((price.wasPrice!!.toDouble()) - price.currentPrice.toDouble()) * 100) / price.wasPrice!!.toDouble()).roundToInt()
+                        ((((price.wasPrice!!.toDouble()) - price.currentPrice.toDouble()) * 100) / price.wasPrice.toDouble()).roundToInt()
                     return ("""${percentDisc}% off - now £${price.currentPrice}""")
                 }
                 else -> {
                     return """Was £${price.wasPrice} now £${price.currentPrice}"""
                 }
             }
-            return ""
         }
 
     }
@@ -160,7 +162,7 @@ data class ProdPrice(
     @SerializedName("then2") val then2Price: String?,
     @SerializedName("now") val nowPrice: Any,
     var currentPrice: String,
-    var priceDiff: Double=0.00
+    var priceDiff: Double = 0.00
 )
 
 data class NowPrice(
