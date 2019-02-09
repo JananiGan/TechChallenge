@@ -1,0 +1,231 @@
+{
+  "products": [
+    {
+      "productId": "3421340",
+      "type": "product",
+      "title": "Phase Eight Beatrix Floral Printed Dress, Cream/Red",
+      "code": "22455431",
+      "averageRating": 4.8,
+      "reviews": 5,
+      "price": {
+        "was": "140.00",
+        "then1": "",
+        "then2": "",
+        "now": "99.00",
+        "uom": "",
+        "currency": "GBP"
+      },
+      "colorSwatches": [],
+      "colorSwatchSelected": 0,
+      "swatchAvailable": false,
+      "categoryQuickViewEnabled": true,
+      "swatchCategoryType": "",
+      "brand": "Phase Eight",
+      "ageRestriction": 0,
+      "isInStoreOnly": false,
+      "isMadeToMeasure": false,
+      "isBundle": false,
+      "isProductSet": false,
+      "promotionalFeatures": []
+    },
+    {
+      "productId": "3341058",
+      "type": "product",
+      "title": "Jolie Moi Bonded Lace Prom Dress",
+      "code": "69251713",
+      "averageRating": 0,
+      "reviews": 0,
+      "price": {
+        "was": "85.00",
+        "then1": "68.00",
+        "then2": "",
+        "now": {
+          "from": "59.00",
+          "to": "68.00"
+        },
+        "uom": "",
+        "currency": "GBP"
+      },
+      "colorSwatches": [
+        {
+          "color": "Dark Grey",
+          "basicColor": "Grey",
+          "colorSwatchUrl": "//johnlewis.scene7.com/is/image/JohnLewis/003335106alt4?cropN=0.56,0.6989473684210527,0.16842105263157894,0.16842105263157894&",
+          "imageUrl": "//johnlewis.scene7.com/is/image/JohnLewis/003335106?",
+          "isAvailable": false,
+          "skuId": "237169362"
+        },
+        {
+          "color": "Dark Mauve",
+          "basicColor": "Purple",
+          "colorSwatchUrl": "//johnlewis.scene7.com/is/image/JohnLewis/003335107alt4?cropN=0.6063157894736843,0.631578947368421,0.16842105263157894,0.16842105263157894&",
+          "imageUrl": "//johnlewis.scene7.com/is/image/JohnLewis/003335107?",
+          "isAvailable": true,
+          "skuId": "237169364"
+        },
+        {
+          "color": "Dark Teal",
+          "basicColor": "Blue",
+          "colorSwatchUrl": "//johnlewis.scene7.com/is/image/JohnLewis/003335109alt3?cropN=0.4652631578947368,0.15578947368421053,0.08210526315789474,0.08210526315789474&",
+          "imageUrl": "//johnlewis.scene7.com/is/image/JohnLewis/003335109?",
+          "isAvailable": true,
+          "skuId": "237169370"
+        },
+        {
+          "color": "Berry",
+          "basicColor": "Purple",
+          "colorSwatchUrl": "//johnlewis.scene7.com/is/image/JohnLewis/003335080alt4?cropN=0.42526315789473684,0.5957894736842105,0.3031578947368421,0.3031578947368421&",
+          "imageUrl": "//johnlewis.scene7.com/is/image/JohnLewis/003335080?",
+          "isAvailable": true,
+          "skuId": "237169205"
+        },
+        {
+          "color": "Burgundy",
+          "basicColor": "Red",
+          "colorSwatchUrl": "//johnlewis.scene7.com/is/image/JohnLewis/003335090?cropN=0.42105263157894735,0.42105263157894735,0.16842105263157894,0.16842105263157894&",
+          "imageUrl": "//johnlewis.scene7.com/is/image/JohnLewis/003335090?",
+          "isAvailable": false,
+          "skuId": "237169270"
+        },
+        {
+          "color": "Navy",
+          "basicColor": "Blue",
+          "colorSwatchUrl": "//johnlewis.scene7.com/is/image/JohnLewis/003335141?cropN=0.42105263157894735,0.42105263157894735,0.16842105263157894,0.16842105263157894&",
+          "imageUrl": "//johnlewis.scene7.com/is/image/JohnLewis/003335141?",
+          "isAvailable": true,
+          "skuId": "237169572"
+        },
+        {
+          "color": "Royal Blue",
+          "basicColor": "Blue",
+          "colorSwatchUrl": "//johnlewis.scene7.com/is/image/JohnLewis/003335151alt3?cropN=0.42105263157894735,0.5810526315789474,0.40421052631578946,0.40421052631578946&",
+          "imageUrl": "//johnlewis.scene7.com/is/image/JohnLewis/003335151?",
+          "isAvailable": true,
+          "skuId": "237169620"
+        }
+      ],
+      "colorSwatchSelected": 3,
+      "colorWheelMessage": "",
+      "outOfStock": false,
+      "emailMeWhenAvailable": false,
+      "availabilityMessage": "",
+      "compare": false,
+      "fabric": "",
+      "swatchAvailable": false,
+      "categoryQuickViewEnabled": true,
+      "swatchCategoryType": "",
+      "brand": "Jolie Moi",
+      "ageRestriction": 0,
+      "isInStoreOnly": false,
+      "isMadeToMeasure": false,
+      "isBundle": false,
+      "isProductSet": false,
+      "promotionalFeatures": []
+    },
+    {
+      "productId": "3525085",
+      "type": "product",
+      "title": "hush Tasha Vest Dress",
+      "code": "44452455",
+      "averageRating": 4.5417,
+      "reviews": 24,
+      "price": {
+        "was": "",
+        "then1": "",
+        "then2": "",
+        "now": {
+          "from": "55.00",
+          "to": "100.00"
+        },
+        "uom": "",
+        "currency": "GBP"
+      },
+      "colorSwatches": [
+        {
+          "color": "Wine",
+          "basicColor": "Red",
+          "colorSwatchUrl": "//johnlewis.scene7.com/is/image/JohnLewis/003519508alt4?cropN=0.5073684210526316,0.23789473684210527,0.16842105263157894,0.16842105263157894&",
+          "imageUrl": "//johnlewis.scene7.com/is/image/JohnLewis/003519508?",
+          "isAvailable": true,
+          "skuId": "237494589"
+        },
+        {
+          "color": "Midnight",
+          "basicColor": "Blue",
+          "colorSwatchUrl": "//johnlewis.scene7.com/is/image/JohnLewis/003519502?cropN=0.42105263157894735,0.42105263157894735,0.16842105263157894,0.16842105263157894&",
+          "imageUrl": "//johnlewis.scene7.com/is/image/JohnLewis/003519502?",
+          "isAvailable": false,
+          "skuId": "237494562"
+        }
+      ],
+      "colorSwatchSelected": 0,
+      "colorWheelMessage": "",
+      "outOfStock": false,
+      "emailMeWhenAvailable": false,
+      "availabilityMessage": "",
+      "compare": false,
+      "fabric": "",
+      "swatchAvailable": false,
+      "categoryQuickViewEnabled": true,
+      "swatchCategoryType": "",
+      "brand": "hush",
+      "ageRestriction": 0,
+      "isInStoreOnly": false,
+      "isMadeToMeasure": false,
+      "isBundle": false,
+      "isProductSet": false,
+      "promotionalFeatures": []
+    },
+    {
+      "productId": "3467432",
+      "type": "product",
+      "title": "",
+      "code": "50851776",
+      "averageRating": 0,
+      "reviews": 0,
+      "price": {
+        "was": "90.00",
+        "then1": "",
+        "then2": "",
+        "now": "3.00",
+        "uom": "",
+        "currency": "GBP"
+      },
+      "colorSwatches": [
+        {
+          "color": "Navy",
+          "basicColor": "Blue",
+          "colorSwatchUrl": "//johnlewis.scene7.com/is/image/JohnLewis/003410039alt3?cropN=0.42105263157894735,0.42105263157894735,0.16842105263157894,0.16842105263157894&",
+          "imageUrl": "//johnlewis.scene7.com/is/image/JohnLewis/003410039?",
+          "isAvailable": true,
+          "skuId": "237334043"
+        },
+        {
+          "color": "Mimosa Yellow",
+          "basicColor": "Yellow",
+          "colorSwatchUrl": "//johnlewis.scene7.com/is/image/JohnLewis/003410038alt3?cropN=0.4105263157894737,0.5410526315789473,0.16842105263157894,0.16842105263157894&",
+          "imageUrl": "//johnlewis.scene7.com/is/image/JohnLewis/003410038?",
+          "isAvailable": true,
+          "skuId": "237334029"
+        }
+      ],
+      "colorSwatchSelected": 0,
+      "colorWheelMessage": "",
+      "outOfStock": false,
+      "emailMeWhenAvailable": false,
+      "availabilityMessage": "",
+      "compare": false,
+      "fabric": "",
+      "swatchAvailable": false,
+      "categoryQuickViewEnabled": true,
+      "swatchCategoryType": "",
+      "brand": "Boden",
+      "ageRestriction": 0,
+      "isInStoreOnly": false,
+      "isMadeToMeasure": false,
+      "isBundle": false,
+      "isProductSet": false,
+      "promotionalFeatures": []
+    }
+  ]
+}
