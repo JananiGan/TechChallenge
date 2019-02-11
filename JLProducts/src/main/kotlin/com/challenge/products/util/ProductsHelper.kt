@@ -1,10 +1,10 @@
-package com.johnlewis.products.util
+package com.challenge.products.util
 
 import com.google.gson.internal.LinkedTreeMap
-import com.johnlewis.products.rest.Colour
-import com.johnlewis.products.rest.Product
-import com.johnlewis.products.rest.ProductPrice
-import com.johnlewis.products.rest.colorSwatch
+import com.challenge.products.rest.Colour
+import com.challenge.products.rest.Product
+import com.challenge.products.rest.ProductPrice
+import com.challenge.products.rest.colorSwatch
 import javafx.scene.paint.Color
 import kotlin.math.roundToInt
 

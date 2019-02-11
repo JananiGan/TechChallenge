@@ -1,9 +1,9 @@
-package com.johnlewis.productsapi
+package com.challenge.productsapi
 
 import com.google.gson.Gson
 import com.google.gson.JsonObject
 import com.google.gson.stream.JsonReader
-import com.johnlewis.products.rest.ProductsApiService
+import com.challenge.products.rest.ProductsApiService
 import spock.lang.Shared
 import spock.lang.Specification
 

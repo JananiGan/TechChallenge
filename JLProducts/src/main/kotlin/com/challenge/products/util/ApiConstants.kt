@@ -1,4 +1,4 @@
-package com.johnlewis.products.util
+package com.challenge.products.util
 
 object ApiConstants {
     val URL_HOST = """https://jl-nonprod-syst.apigee.net/v1/categories/"""

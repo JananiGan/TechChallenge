@@ -1,10 +1,10 @@
-package com.johnlewis.products.rest
+package com.challenge.products.rest
 
 import com.google.gson.Gson
 import com.google.gson.JsonObject
 import com.google.gson.annotations.SerializedName
-import com.johnlewis.products.util.ApiConstants
-import com.johnlewis.products.util.ProductsHelper
+import com.challenge.products.util.ApiConstants
+import com.challenge.products.util.ProductsHelper
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.apache.Apache
 import io.ktor.client.features.BadResponseStatusException
@@ -41,7 +41,7 @@ open class ProductsApiService {
             runBlocking {
 
                 productsJson = client.get<JsonObject?> {
-                    url(URL("""${ApiConstants.URL_HOST}${categoryId}/products?key=2ALHCAAs6ikGRBoy6eTHA58RaG097Fma"""))
+                    url(URL("""${ApiConstants.URL_HOST}$categoryId/products?key=2ALHCAAs6ikGRBoy6eTHA58RaG097Fma"""))
                     contentType(ContentType.Application.Json)
                 }
             }

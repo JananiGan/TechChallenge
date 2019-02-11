@@ -13,10 +13,10 @@ apply plugin: 'kotlin'
 apply plugin: 'application'
 apply plugin: 'groovy'
 
-group 'johnlewis'
+group 'challenge'
 version '0.0.1'
 //mainClassName = "io.ktor.server.netty.EngineMain"
-mainClassName = 'com.johnlewis.products.controller.ProductsApiApplicationKt'
+mainClassName = 'com.challenge.products.rest.ProductsApiApplicationKt'
 
 sourceCompatibility = 1.8
 compileKotlin {

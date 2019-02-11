@@ -1,4 +1,4 @@
-package com.johnlewis.products.rest
+package com.challenge.products.rest
 
 import io.ktor.application.Application
 import io.ktor.application.call
