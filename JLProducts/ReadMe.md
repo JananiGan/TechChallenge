@@ -1,6 +1,6 @@
-#Tech Challenge on rest Apis
+<h2>#Tech Challenge on rest Apis</h2><br/>
 
-##Tech details
+<h3>##Tech details</h3><br/>
 Programming Language - Kotlin
 Rest Framework - Ktor
 Test - Groovy (using mockito) and kotlin (to test the ktor application call using jUnit)
