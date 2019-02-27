@@ -1,6 +1,6 @@
-<h2>#Tech Challenge on rest Apis</h2><br/>
+<h2>#Tech Challenge on rest Apis</h2>
 
-<h3>##Tech details</h3><br/>
+<h3>##Tech details</h3>
 Programming Language - Kotlin<br/>
 Rest Framework - Ktor<br/>
 Test - Groovy (using mockito) and kotlin (to test the ktor application call using jUnit)<br/>
@@ -9,7 +9,7 @@ Application server - netty<br/>
 
 <b>Rest end point</b> - v1/<categoryid>/products/pricereduction 
 
-<h3>##Git Clone - Clone this complete repository</h3><br/>
+<h3>##Git Clone - Clone this complete repository</h3>
 git clone https://github.com/JananiGan/TechChallenge.git<br/>
 
 <h3>#Build </h3> (Please note that GradleWrapper is available, so build could be triggered using gradlew.bat also)<br/>
