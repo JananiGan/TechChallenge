@@ -16,7 +16,7 @@ git clone https://github.com/JananiGan/TechChallenge.git<br/>
 cd <cloned_folder>/TechChallenge/JLProducts<br/>
 ./gradlew build<br/>
 
-<h3>#Run the application</h3><br/>
+<h3>#Run the application</h3>
 <b><u>Note:</u></b> Application configured to run on port 8080. (Main class/ktor application module - ProductsApiApplication.kt) <br/>
 
 cd <cloned_folder>/TechChallenge/JLProducts<br/>
@@ -54,7 +54,7 @@ Application would be started and the below output could be seen in the console<b
 2019-02-27 12:19:36.913 [main] INFO  Application - Responding at http://0.0.0.0:8080
 </i>
 
-<b> Hit the rest endpoint like "http://localhost:8080/v1/600001506/products/pricereduction" </b>
+<b> Hit the rest endpoint as "http://localhost:8080/v1/600001506/products/pricereduction" </b>
 
-<h3>##Import project into IntelliJ</h3><br/>
+<h3>##Import project into IntelliJ</h3>
 Navigate to TechChallenge/JLProducts and import<br/>
