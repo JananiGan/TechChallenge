@@ -7,6 +7,8 @@ Test - Groovy (using mockito) and kotlin (to test the ktor application call usin
 Build tool - gradle<br/>
 Application server - netty<br/>
 
+<b>Rest end point</b> - v1/<categoryid>/products/pricereduction 
+
 <h3>##Git Clone - Clone this complete repository</h3><br/>
 git clone https://github.com/JananiGan/TechChallenge.git<br/>
 
@@ -51,6 +53,8 @@ Application would be started and the below output could be seen in the console<b
 2019-02-27 12:19:36.505 [main] INFO  Application - No ktor.deployment.watch patterns specified, automatic reload is not active
 2019-02-27 12:19:36.913 [main] INFO  Application - Responding at http://0.0.0.0:8080
 </i>
+
+<b> Hit the rest endpoint like "http://localhost:8080/v1/600001506/products/pricereduction" </b>
 
 <h3>##Import project into IntelliJ</h3><br/>
 Navigate to TechChallenge/JLProducts and import<br/>
