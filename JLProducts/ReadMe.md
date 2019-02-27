@@ -1,4 +1,5 @@
 <h2>#Tech Challenge on rest Apis</h2>
+Returns a json of products with price reduction in sorted order with highest price reduction first<br/>
 
 <h3>##Tech details</h3>
 Programming Language - Kotlin<br/>
@@ -54,7 +55,11 @@ Application would be started and the below output could be seen in the console<b
 2019-02-27 12:19:36.913 [main] INFO  Application - Responding at http://0.0.0.0:8080
 </i>
 
-<b> Hit the rest endpoint as "http://localhost:8080/v1/600001506/products/pricereduction" </b>
+<b> API endpoints as <b> <br/>
+ Without labelType parameter - http://localhost:8080/v1/600001506/products/pricereduction" <br/>
+ LabelType parameter ShowWasNow - http://localhost:8080/v1/600001506/products/pricereduction"?labelType=ShowWasNow <br/>
+ LabelType parameter ShowWasThenNow - http://localhost:8080/v1/600001506/products/pricereduction"?labelType=ShowWasThenNow <br/>
+ LabelType parameter ShowPercDscount - http://localhost:8080//v1/600001506/products/pricereduction"?labelType=ShowPercDscount  <br/>
 
 <h3>##Import project into IntelliJ</h3>
 Navigate to TechChallenge/JLProducts and import<br/>
