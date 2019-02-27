@@ -1,28 +1,28 @@
-#Tech Challenge on rest Apis
+<h2>#Tech Challenge on rest Apis</h2><br/>
 
-##Tech details
-Programming Language - Kotlin
-Rest Framework - Ktor
-Test - Groovy (using mockito) and kotlin (to test the ktor application call using jUnit)
-Build tool - gradle
-Application server - netty
+<h3>##Tech details</h3><br/>
+Programming Language - Kotlin<br/>
+Rest Framework - Ktor<br/>
+Test - Groovy (using mockito) and kotlin (to test the ktor application call using jUnit)<br/>
+Build tool - gradle<br/>
+Application server - netty<br/>
 
-##Git Clone - Clone this complete repository
-git clone https://github.com/JananiGan/TechChallenge.git
+<h3>##Git Clone - Clone this complete repository</h3><br/>
+git clone https://github.com/JananiGan/TechChallenge.git<br/>
 
-#Build (Please note that GradleWrapper is available, so build could be triggered using gradlew.bat also)
-cd <cloned_folder>/TechChallenge/JLProducts
-./gradlew build
+<h3>#Build </h3> (Please note that GradleWrapper is available, so build could be triggered using gradlew.bat also)<br/>
+cd <cloned_folder>/TechChallenge/JLProducts<br/>
+./gradlew build<br/>
 
-#Run the application
-Note : Application configured to run on port 8080. (Main class/ktor application module - ProductsApiApplication.kt)
+<h3>#Run the application</h3><br/>
+<b><u>Note:</u></b> Application configured to run on port 8080. (Main class/ktor application module - ProductsApiApplication.kt) <br/>
 
-cd <cloned_folder>/TechChallenge/JLProducts
-./gradlew run
+cd <cloned_folder>/TechChallenge/JLProducts<br/>
+./gradlew run<br/>
 
-Application would be started and the below output could be seen in the console
+Application would be started and the below output could be seen in the console<br/>
 
-
+<i>
 > Task :compileKotlin UP-TO-DATE
 > Task :compileJava NO-SOURCE
 > Task :compileGroovy NO-SOURCE
@@ -50,7 +50,7 @@ Application would be started and the below output could be seen in the console
 
 2019-02-27 12:19:36.505 [main] INFO  Application - No ktor.deployment.watch patterns specified, automatic reload is not active
 2019-02-27 12:19:36.913 [main] INFO  Application - Responding at http://0.0.0.0:8080
+</i>
 
-
-##Import project into IntelliJ
-Navigate to TechChallenge/JLProducts and import
+<h3>##Import project into IntelliJ</h3><br/>
+Navigate to TechChallenge/JLProducts and import<br/>
