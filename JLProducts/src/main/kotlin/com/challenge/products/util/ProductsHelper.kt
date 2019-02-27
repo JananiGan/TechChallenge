@@ -1,21 +1,39 @@
 package com.challenge.products.util
 
-import com.google.gson.internal.LinkedTreeMap
 import com.challenge.products.rest.Colour
 import com.challenge.products.rest.Product
 import com.challenge.products.rest.ProductPrice
 import com.challenge.products.rest.colorSwatch
-import javafx.scene.paint.Color
+import com.google.gson.Gson
+import com.google.gson.JsonParser
+import com.google.gson.internal.LinkedTreeMap
+import com.google.gson.stream.JsonReader
+import java.io.FileReader
 import kotlin.math.roundToInt
 
 object ProductsHelper {
+
+    lateinit var currencyCodes: LinkedTreeMap<*, *>
+    val rgbLookUpTable = mapOf(
+        "WHITE" to "FFFFFF",
+        "RED" to "FF0000",
+        "BLUE" to "0000FF",
+        "PINK" to "FFC0CB",
+        "GREY" to "808080",
+        "BLACK" to "000000",
+        "GREEN" to "008000",
+        "ORANGE" to "FFA500",
+        "PURPLE" to "800080",
+        "YELLOW" to "FFFF00",
+        "MULTI" to ""
+    )
 
     fun getColorSwatches(colorSwatches: List<colorSwatch>): List<Colour> {
         if (!colorSwatches.isNullOrEmpty()) {
             val colorsWithRgbList = colorSwatches.map { it ->
                 Colour(
                     it.color,
-                    getRGBColor(it.basicColor),
+                    rgbLookUpTable[it.basicColor.toUpperCase()] ?: "",
                     it.skuid
                 )
             }
@@ -25,7 +43,16 @@ object ProductsHelper {
 
     }
 
+    fun populateCurrencyCodes() {
+        val currencyJson = Gson().fromJson(
+            JsonParser().parse(JsonReader(FileReader("""src/main/resources/currencies.json"""))).toString(),
+            HashMap::class.java
+        )
+        currencyCodes = currencyJson.get("""currencies""") as LinkedTreeMap<*, *>
+    }
+
     fun calculatePriceReductionPercent(productsWithWasNowPrice: List<Product>): List<Product> {
+        populateCurrencyCodes()
         for (prod in productsWithWasNowPrice) {
             if (prod.price.nowPrice is LinkedTreeMap<*, *>) {
                 prod.price.currentPrice =
@@ -33,9 +60,11 @@ object ProductsHelper {
             } else if (prod.price.nowPrice is String) {
                 prod.price.currentPrice = prod.price.nowPrice
             }
-            if (!prod.price.currentPrice.isNullOrEmpty())
+            if (!prod.price.currentPrice.isNullOrEmpty()) {
                 prod.price.priceReductionPercent =
                     (((prod.price.wasPrice!!.toDouble() - prod.price.currentPrice.toDouble()) * 100) / prod.price.wasPrice.toDouble()).roundToInt()
+            }
+            prod.price.currencySymbol = currencyCodes.get(prod.price.currency ?: """default""").toString()
         }
         return productsWithWasNowPrice
     }
@@ -45,20 +74,11 @@ object ProductsHelper {
         val numericPrice = nowPrice.toDouble()
         try {
             if (numericPrice.compareTo(numericPrice.toInt()) == 0 && numericPrice > 10)
-                return ApiConstants.CURR_FORMAT + (numericPrice.toInt().toString())
+                return numericPrice.toInt().toString()
             else
-                return ApiConstants.CURR_FORMAT + nowPrice
+                return nowPrice
         } catch (e: NumberFormatException) {
-            return ApiConstants.CURR_FORMAT + nowPrice
-        }
-    }
-
-    fun getRGBColor(basicColor: String): String {
-        try {
-            val c = Color.valueOf(basicColor).toString()
-            return c.removePrefix("0x").removeSuffix("ff")
-        } catch (e: Exception) {
-            return ""
+            return nowPrice
         }
     }
 
@@ -75,15 +95,15 @@ object ProductsHelper {
             ApiConstants.SHOW_WAS_THEN_NOW -> {
                 val thenPrice = setNullIfEmpty(price.then2Price) ?: price.then1Price
                 if (!thenPrice.isNullOrEmpty())
-                    return """Was ${ApiConstants.CURR_FORMAT}${price.wasPrice}, then ${ApiConstants.CURR_FORMAT}${thenPrice}, now ${ApiConstants.CURR_FORMAT}${price.currentPrice}"""
+                    return """Was ${price.currencySymbol}${price.wasPrice}, then ${price.currencySymbol}${thenPrice}, now ${price.currencySymbol}${price.currentPrice}"""
                 else
-                    return """Was ${ApiConstants.CURR_FORMAT}${price.wasPrice}, now ${ApiConstants.CURR_FORMAT}${price.currentPrice}"""
+                    return """Was ${price.currencySymbol}${price.wasPrice}, now ${price.currencySymbol}${price.currentPrice}"""
             }
             ApiConstants.SHOW_PERCENT_NOW -> {
-                return ("""${price.priceReductionPercent}% off - now ${ApiConstants.CURR_FORMAT}${price.currentPrice}""")
+                return ("""${price.priceReductionPercent}% off - now ${price.currencySymbol}${price.currentPrice}""")
             }
             else -> {
-                return """Was ${ApiConstants.CURR_FORMAT}${price.wasPrice}, now ${ApiConstants.CURR_FORMAT}${price.currentPrice}"""
+                return """Was ${price.currencySymbol}${price.wasPrice}, now ${price.currencySymbol}${price.currentPrice}"""
             }
         }
     }
