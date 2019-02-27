@@ -55,7 +55,7 @@ Application would be started and the below output could be seen in the console<b
 2019-02-27 12:19:36.913 [main] INFO  Application - Responding at http://0.0.0.0:8080
 </i>
 
-<h3> API endpoints  <h3> <br/>
+<b> API endpoints  <b> <br/>
  Without labelType parameter - http://localhost:8080/v1/600001506/products/pricereduction <br/>
  LabelType parameter ShowWasNow - http://localhost:8080/v1/600001506/products/pricereduction?labelType=ShowWasNow <br/>
  LabelType parameter ShowWasThenNow - http://localhost:8080/v1/600001506/products/pricereduction?labelType=ShowWasThenNow <br/>
